@@ -4,13 +4,14 @@ import { Header } from './components/Header/Header';
 import { useTelegram } from './hooks/useTelegram';
 
 
+const sfs = window.Telegram.WebApp
 
   function App() {
     const {tg} = useTelegram()
 
 
     const handeClick = ( ) => {
-      tg.backButton.show()
+      sfs.mainButton.show()
       
     }
     useEffect(() => {
@@ -21,7 +22,7 @@ import { useTelegram } from './hooks/useTelegram';
   return (
     <div className="App">
       <Header/>
-      <button type='button' onClick={handeClick}> Toggle</button>
+      <button type='button' onClick={handeClick}> Show Btn</button>
       Work
     </div>
   );
