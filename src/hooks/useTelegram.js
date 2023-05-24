@@ -15,7 +15,11 @@ export const useTelegram = ( ) => {
 
     //     }
     // }
+    const onToggleButton = () => {
+        tg.mainButton.show();
+    }
     return {
+        onToggleButton,
         onClose,
         tg,
         user: tg.initDataUnsafe?.user
