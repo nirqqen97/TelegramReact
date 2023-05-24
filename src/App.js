@@ -14,7 +14,6 @@ import { useTelegram } from './hooks/useTelegram';
      alert('main button clicked')
    }
     useEffect(() => {
-      onToggleButton()
       tg.ready()
     }, [onToggleButton, tg]);
     
