@@ -10,16 +10,20 @@ import { useTelegram } from './hooks/useTelegram';
 
 
  
-  
+   const handleClick =( ) => { 
+     alert('main button clicked')
+   }
     useEffect(() => {
+      onToggleButton()
       tg.ready()
-    }, [tg]);
+    }, [onToggleButton, tg]);
     
 
   return (
     <div className="App">
       <Header/>
       <button onClick={onToggleButton}> Show Btn</button>
+      <button onClick={handleClick}> AlertTest</button>
       Work
     </div>
   );
