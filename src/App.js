@@ -10,23 +10,20 @@ import { useTelegram } from './hooks/useTelegram';
 
 
  
-   const handleClick =( ) => { 
-      // tg.mainButton.text('Button')
-      // tg.mainButton.enable()
-      // tg.mainButton.show();
-      alert(tg.MainButton)
-     alert('main button clicked')
-   }
+  //  const handleClick =( ) => { 
+
+  //     alert(tg.MainButton)
+  //    alert('main button clicked')
+  //  }
     useEffect(() => {
       tg.ready()
-    }, [onToggleButton, tg]);
+    }, [tg]);
     
 
   return (
     <div className="App">
       <Header/>
       <button onClick={onToggleButton}> Show Btn</button>
-      <button onClick={handleClick}> AlertTest</button>
       Work
     </div>
   );
