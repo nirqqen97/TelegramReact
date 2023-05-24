@@ -8,6 +8,10 @@ import { useTelegram } from './hooks/useTelegram';
   function App() {
     const {tg, onToggleButton} = useTelegram()
 
+
+    const handeClick = ( ) => {
+      tg.mainButton.show()
+    }
     useEffect(() => {
       tg.ready()
     }, [tg]);
@@ -16,7 +20,7 @@ import { useTelegram } from './hooks/useTelegram';
   return (
     <div className="App">
       <Header/>
-      <button type='button' onClick={onToggleButton}> Toggle</button>
+      <button type='button' onClick={handeClick}> Toggle</button>
       Work
     </div>
   );
