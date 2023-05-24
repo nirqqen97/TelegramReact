@@ -10,7 +10,8 @@ import { useTelegram } from './hooks/useTelegram';
 
 
     const handeClick = ( ) => {
-      tg.mainButton.show()
+      tg.backButton.show()
+      
     }
     useEffect(() => {
       tg.ready()
