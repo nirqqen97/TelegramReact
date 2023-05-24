@@ -14,7 +14,7 @@ import { useTelegram } from './hooks/useTelegram';
       // tg.mainButton.text('Button')
       // tg.mainButton.enable()
       // tg.mainButton.show();
-      alert(tg.mainButton)
+      alert(tg.MainButton)
      alert('main button clicked')
    }
     useEffect(() => {
