@@ -17,7 +17,9 @@ export const useTelegram = ( ) => {
     // }
     const onToggleButton = () => {
         tg.mainButton.text('Button')
+        tg.mainButton.enable()
         tg.mainButton.show();
+        alert('clicked')
     }
     return {
         onToggleButton,
