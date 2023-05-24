@@ -11,6 +11,10 @@ import { useTelegram } from './hooks/useTelegram';
 
  
    const handleClick =( ) => { 
+      // tg.mainButton.text('Button')
+      // tg.mainButton.enable()
+      // tg.mainButton.show();
+      alert(tg.mainButton)
      alert('main button clicked')
    }
     useEffect(() => {
