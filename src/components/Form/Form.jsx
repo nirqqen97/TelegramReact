@@ -1,10 +1,12 @@
-import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState,React } from "react";
 import { useTelegram } from "../../hooks/useTelegram";
 import "./Form.css";
 
 export const Form = ( ) => {
     //29:21 usestate
+    const [city, setCity] = useState('');
+    const [street, setStreet] = useState('');
+
     const {tg} = useTelegram()
 
 
@@ -14,21 +16,29 @@ export const Form = ( ) => {
       })
     }, [tg]);
 
-    // useEffect(() => {
-    //    if (!street || !city) {
-    //         tg.MainButton.hide()
-    //    }
-    //    else { 
-    //     tg.MainButton.show()
+    const handleChangeCity = (e) => {
+        setCity(e.currentTarget.value)
+    } 
+    const handleChangeStreet = (e) => {
+        setStreet(e.currentTarget.value)
+    } 
 
-    //    }
-    //   }, [tg]);
+
+    useEffect(() => {
+       if (!street || !city) {
+            tg.MainButton.hide()
+       }
+       else { 
+        tg.MainButton.show()
+
+       }
+      }, [city, street, tg.MainButton]);
     
     return (
         <div>
             <h3>Enter your data</h3>
-            <input className="input" type="text" placeholder="City" />
-            <input className="input" type="text" placeholder="Street" />
+            <input value={city} className="input" type="text" placeholder="City" onChange={handleChangeCity} />
+            <input value={street} className="input" type="text" placeholder="Street" onChange={handleChangeStreet} />
             <select>
                 <option value={"legal"}>legal</option>
                 <option value={"physical"}>physical</option>

@@ -11,13 +11,6 @@ import { useTelegram } from './hooks/useTelegram';
   function App() {
     const {tg,onToggleButton} = useTelegram()
 
-
- 
-  //  const handleClick =( ) => { 
-
-  //     alert(tg.MainButton)
-  //    alert('main button clicked')
-  //  }
     useEffect(() => {
       tg.ready()
     }, [tg]);
