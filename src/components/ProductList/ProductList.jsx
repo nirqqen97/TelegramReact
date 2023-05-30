@@ -17,8 +17,12 @@ export const ProductList = ( ) => {
          let newItems = [];
          
          if (arleadyAdded) {
-             
+             newItems = addedItems.filter(item => item.id !== product.id)
          }
+         else { 
+             newItems = [...addedItems, product]
+         }
+         setaddedItems(newItems)
     }
     return (
             products.map(product => {
