@@ -24,15 +24,6 @@ export const Form = ( ) => {
     } 
 
     useEffect(() => {
-            tg.setParams({
-                text : 'Send Data'
-            })
-
-
-          }, [tg]);
-    
-
-    useEffect(() => {
        if (!street || !city) {
             tg.MainButton.hide()
        }
