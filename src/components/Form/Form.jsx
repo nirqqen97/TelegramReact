@@ -23,6 +23,14 @@ export const Form = ( ) => {
         setStreet(e.currentTarget.value)
     } 
 
+    useEffect(() => {
+            tg.setParams({
+                text : 'Send Data'
+            })
+
+
+          }, [tg]);
+    
 
     useEffect(() => {
        if (!street || !city) {
