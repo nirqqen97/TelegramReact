@@ -9,7 +9,7 @@ export const Form = ( ) => {
 
     const {tg} = useTelegram()
 
-    const onSendData = useCallback(() => {
+    const onSendData = useCallback(() => {       //* отправлять данные на бек
       const data = {
           city,
           street
