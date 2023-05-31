@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useTelegram } from "../../hooks/useTelegram";
 import { ProductItem } from "../ProductItem/ProductItem";
 
 const products = [
@@ -11,7 +12,7 @@ const products = [
 
 export const ProductList = ( ) => {
     const [addedItems, setaddedItems] = useState([]);
-    
+    const {tg} = useTelegram()
     const onAdd = ( product ) => {
          const arleadyAdded = addedItems.find(item => item.id === product.id)
          let newItems = [];
@@ -23,6 +24,18 @@ export const ProductList = ( ) => {
              newItems = [...addedItems, product]
          }
          setaddedItems(newItems)
+         if (newItems.length === 0 ) {
+                tg.MainButton.hide()
+             
+         }
+         else {
+            tg.MainButton.show()
+            tg.MainButton.setParams({
+                text: 'buy a clothes'
+            })
+
+
+         }
     }
     return (
             products.map(product => {
